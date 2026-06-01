@@ -56,9 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Client Tools inyectadas");
 
     });
+    widget.addEventListener("elevenlabs-convai:call", (event) => {
+        console.log("EVENTO CALL DETECTADO", event);
+    });
 
-});
-
-widget.addEventListener("elevenlabs-convai:call", (event) => {
-    console.log("EVENTO CALL DETECTADO", event);
 });
