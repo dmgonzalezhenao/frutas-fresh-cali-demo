@@ -1,11 +1,296 @@
-<!DOCTYPE html><html><head><title>Fresh Cali</title><link rel="stylesheet" href="css/styles.css"></head><body>
-<nav><a href="index.html">Inicio</a><a href="products.html">Productos</a><a href="about.html">Nosotros</a><a href="contact.html">Contacto</a></nav>
-<section id="hero" class="hero"><h1>Fresh Cali</h1><p>Frutas frescas en Cali.</p></section>
-<section id="featured-products" class="section"><h2>Productos Destacados</h2><div class="cards"><div class="card">Limón Pajarito</div><div class="card">Tomate Chonto</div><div class="card">Lentejas</div></div></section>
-<section id="benefits" class="section"><h2>Beneficios</h2><p>Calidad, frescura y entrega rápida.</p></section>
-<section id="contact-form" class="section"><h2>Contacto Rápido</h2><p>WhatsApp: 3000000000</p></section>
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frutas Fresh Cali</title>
+
+<link rel="stylesheet" href="./css/styles.css">
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    background: #2e7d32;
+    padding: 15px;
+    display: flex;
+    gap: 20px;
+    z-index: 999;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 60px 30px;
+    scroll-margin-top: 80px;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: #f5f5f5;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background: white;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f5f5f5;
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+    <a href="#hero">Inicio</a>
+    <a href="#catalog">Productos</a>
+    <a href="#story">Nosotros</a>
+    <a href="#contact-form">Contacto</a>
+</nav>
+
+<section id="hero" class="hero">
+    <h1>Fresh Cali</h1>
+    <p>Frutas, verduras y productos frescos en Cali.</p>
+</section>
+
+<section id="featured-products">
+    <h2>Productos Destacados</h2>
+
+```
+<div class="cards">
+    <div class="card">🍋 Limón Pajarito</div>
+    <div class="card">🍅 Tomate Chonto</div>
+    <div class="card">🫘 Lentejas</div>
+</div>
+
+</section>
+
+<section id="benefits">
+    <h2>Beneficios</h2>
+
+<div class="cards">
+    <div class="card">
+        <h3>Calidad</h3>
+        <p>Productos seleccionados diariamente.</p>
+    </div>
+
+    <div class="card">
+        <h3>Frescura</h3>
+        <p>Directamente desde productores locales.</p>
+    </div>
+
+    <div class="card">
+        <h3>Entrega</h3>
+        <p>Rápida dentro de Cali.</p>
+    </div>
+</div>
+
+
+</section>
+
+<section id="catalog">
+
+<h1>Catálogo Fresh Cali</h1>
+
+<section id="verduras">
+    <h2>🥬 Verduras y Hortalizas</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Tomate Chonto</h3>
+            <p>Libra</p>
+            <strong>$2.500</strong>
+        </div>
+
+        <div class="card">
+            <h3>Cebolla Cabezona</h3>
+            <p>Libra</p>
+            <strong>$2.800</strong>
+        </div>
+
+        <div class="card">
+            <h3>Lechuga Crespa</h3>
+            <p>Unidad</p>
+            <strong>$2.200</strong>
+        </div>
+
+        <div class="card">
+            <h3>Ajo</h3>
+            <p>Unidad</p>
+            <strong>$800</strong>
+        </div>
+    </div>
+</section>
+
+<section id="tuberculos">
+    <h2>🥔 Tubérculos</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Papa Pastusa</h3>
+            <p>Libra</p>
+            <strong>$2.200</strong>
+        </div>
+
+        <div class="card">
+            <h3>Yuca</h3>
+            <p>Libra</p>
+            <strong>$2.000</strong>
+        </div>
+
+        <div class="card">
+            <h3>Plátano Maduro</h3>
+            <p>Unidad</p>
+            <strong>$1.000</strong>
+        </div>
+    </div>
+</section>
+
+<section id="citricos">
+    <h2>🍊 Frutas Cítricas</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Limón Pajarito</h3>
+            <p>Libra</p>
+            <strong>$1.800</strong>
+        </div>
+
+        <div class="card">
+            <h3>Naranja</h3>
+            <p>Libra</p>
+            <strong>$2.000</strong>
+        </div>
+
+        <div class="card">
+            <h3>Mandarina</h3>
+            <p>Libra</p>
+            <strong>$2.500</strong>
+        </div>
+    </div>
+</section>
+
+<section id="tropicales">
+    <h2>🥭 Frutas Tropicales</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Aguacate Hass</h3>
+            <p>Unidad</p>
+            <strong>$3.500</strong>
+        </div>
+
+        <div class="card">
+            <h3>Banano</h3>
+            <p>Libra</p>
+            <strong>$2.000</strong>
+        </div>
+
+        <div class="card">
+            <h3>Papaya</h3>
+            <p>Libra</p>
+            <strong>$2.500</strong>
+        </div>
+    </div>
+</section>
+
+<section id="despensa">
+    <h2>🛒 Despensa y Varios</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Arroz</h3>
+            <p>Libra</p>
+            <strong>$2.200</strong>
+        </div>
+
+        <div class="card">
+            <h3>Lentejas</h3>
+            <p>Libra</p>
+            <strong>$3.000</strong>
+        </div>
+
+        <div class="card">
+            <h3>Frijol Cargamanto</h3>
+            <p>Libra</p>
+            <strong>$4.500</strong>
+        </div>
+
+        <div class="card">
+            <h3>Huevos AA</h3>
+            <p>Docena</p>
+            <strong>$6.500</strong>
+        </div>
+    </div>
+</section>
+
+</section>
+
+<section id="story">
+    <h1>Nuestra Historia</h1>
+    <p>Fresh Cali nace para distribuir frutas y verduras frescas en toda la ciudad.</p>
+</section>
+
+<section id="team">
+    <h2>Equipo</h2>
+    <p>Agricultores y distribuidores locales comprometidos con la calidad.</p>
+</section>
+
+<section id="values">
+    <h2>Valores</h2>
+    <p>Calidad, honestidad y sostenibilidad.</p>
+</section>
+
+<section id="contact-form">
+    <h1>Contacto</h1>
+
+<p>Email: ventas@freshcali.com</p>
+<p>Teléfono: 3000000000</p>
+```
+
+</section>
+
+<section id="faq">
+    <h2>Preguntas Frecuentes</h2>
+    <p>Realizamos entregas dentro de Cali.</p>
+</section>
 
 <elevenlabs-convai agent-id="agent_9901kt1w2w6jft0vhnpmqzyt00tz"></elevenlabs-convai>
+
 <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-<script src="js/navigation.js"></script>
-<footer>Fresh Cali</footer></body></html>
+
+<script src="./js/navigation.js"></script>
+
+<footer>
+    Frutas Fresh Cali © 2026
+</footer>
+
+</body>
+</html>

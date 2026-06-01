@@ -7,57 +7,30 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    console.log("Widget encontrado");
-
     widget.addEventListener("elevenlabs-convai:call", (event) => {
-
-        console.log("Evento elevenlabs-convai:call detectado");
 
         event.detail.config.clientTools = {
 
-            navigate: async ({ page }) => {
-
-                console.log("navigate ejecutado:", page);
-
-                const routes = {
-                    home: "index.html",
-                    products: "products.html",
-                    about: "about.html",
-                    contact: "contact.html"
-                };
-
-                const destination = routes[page];
-
-                if (destination) {
-                    window.location.href = destination;
-                }
-
-                return "Navegación completada";
-            },
-
             scroll_to: async ({ section }) => {
 
-                console.log("scroll_to ejecutado:", section);
+                console.log("Scroll solicitado:", section);
 
                 const element = document.getElementById(section);
 
-                if (element) {
-                    element.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
+                if (!element) {
+                    return `La sección ${section} no existe`;
                 }
 
-                return "Scroll completado";
+                element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                return `Scroll realizado a ${section}`;
             }
 
         };
 
-        console.log("Client Tools inyectadas");
-
-    });
-    widget.addEventListener("elevenlabs-convai:call", (event) => {
-        console.log("EVENTO CALL DETECTADO", event);
     });
 
 });
