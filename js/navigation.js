@@ -2,64 +2,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const widget = document.querySelector("elevenlabs-convai");
 
-
-    console.log("setClientTools:", typeof widget.setClientTools);
-    console.log("registerTool:", typeof widget.registerTool);
-    console.log("clientTools:", widget.clientTools);
     if (!widget) {
-        console.error("Widget de ElevenLabs no encontrado");
+        console.error("Widget no encontrado");
         return;
     }
 
     console.log("Widget encontrado");
 
-    widget.clientTools = {
+    widget.addEventListener("elevenlabs-convai:call", (event) => {
 
-        navigate: async ({ page }) => {
+        console.log("Evento elevenlabs-convai:call detectado");
 
-            console.log("Tool navigate llamada");
-            console.log("Página:", page);
+        event.detail.config.clientTools = {
 
-            const routes = {
-                home: "index.html",
-                products: "products.html",
-                about: "about.html",
-                contact: "contact.html"
-            };
+            navigate: async ({ page }) => {
 
-            const destination = routes[page];
+                console.log("navigate ejecutado:", page);
 
-            if (destination) {
-                window.location.href = destination;
-                return `Navegación realizada a ${page}`;
+                const routes = {
+                    home: "index.html",
+                    products: "products.html",
+                    about: "about.html",
+                    contact: "contact.html"
+                };
+
+                const destination = routes[page];
+
+                if (destination) {
+                    window.location.href = destination;
+                }
+
+                return "Navegación completada";
+            },
+
+            scroll_to: async ({ section }) => {
+
+                console.log("scroll_to ejecutado:", section);
+
+                const element = document.getElementById(section);
+
+                if (element) {
+                    element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
+
+                return "Scroll completado";
             }
 
-            return `Página ${page} no encontrada`;
-        },
+        };
 
-        scroll_to: async ({ section }) => {
+        console.log("Client Tools inyectadas");
 
-            console.log("Tool scroll_to llamada");
-            console.log("Sección:", section);
+    });
 
-            const element = document.getElementById(section);
+});
 
-            if (element) {
-
-                element.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-                return `Scroll realizado a ${section}`;
-            }
-
-            return `Sección ${section} no encontrada`;
-        }
-
-    };
-
-    console.log("Client Tools registradas");
-    console.log(widget.clientTools);
-
+widget.addEventListener("elevenlabs-convai:call", (event) => {
+    console.log("EVENTO CALL DETECTADO", event);
 });
