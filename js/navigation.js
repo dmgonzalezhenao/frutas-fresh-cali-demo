@@ -2,6 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const widget = document.querySelector("elevenlabs-convai");
 
+
+    console.log("setClientTools:", typeof widget.setClientTools);
+    console.log("registerTool:", typeof widget.registerTool);
+    console.log("clientTools:", widget.clientTools);
     if (!widget) {
         console.error("Widget de ElevenLabs no encontrado");
         return;
