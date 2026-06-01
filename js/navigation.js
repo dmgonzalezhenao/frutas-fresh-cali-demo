@@ -3,25 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const widget = document.querySelector("elevenlabs-convai");
 
     if (!widget) {
-        console.error("No se encontró el widget de ElevenLabs");
+        console.error("Widget de ElevenLabs no encontrado");
         return;
     }
 
     console.log("Widget encontrado");
 
-    widget.addEventListener("call", (event) => {
+    widget.clientTools = {
 
-        console.log("CALL RECIBIDA:");
-        console.log(event);
+        navigate: async ({ page }) => {
 
-        const { name, parameters } = event.detail;
-
-        console.log("Tool:", name);
-        console.log("Parameters:", parameters);
-
-        // Navegación entre páginas
-
-        if (name === "navigate") {
+            console.log("Tool navigate llamada");
+            console.log("Página:", page);
 
             const routes = {
                 home: "index.html",
@@ -30,31 +23,39 @@ document.addEventListener("DOMContentLoaded", () => {
                 contact: "contact.html"
             };
 
-            const destination = routes[parameters.page];
-
-            console.log("Destino:", destination);
+            const destination = routes[page];
 
             if (destination) {
                 window.location.href = destination;
+                return `Navegación realizada a ${page}`;
             }
-        }
 
-        // Scroll dentro de la página
+            return `Página ${page} no encontrada`;
+        },
 
-        if (name === "scroll_to") {
+        scroll_to: async ({ section }) => {
 
-            const target = document.getElementById(parameters.section);
+            console.log("Tool scroll_to llamada");
+            console.log("Sección:", section);
 
-            console.log("Sección:", parameters.section);
+            const element = document.getElementById(section);
 
-            if (target) {
-                target.scrollIntoView({
+            if (element) {
+
+                element.scrollIntoView({
                     behavior: "smooth",
                     block: "start"
                 });
+
+                return `Scroll realizado a ${section}`;
             }
+
+            return `Sección ${section} no encontrada`;
         }
 
-    });
+    };
+
+    console.log("Client Tools registradas");
+    console.log(widget.clientTools);
 
 });
