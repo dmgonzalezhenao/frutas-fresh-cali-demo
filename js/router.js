@@ -1,3 +1,4 @@
+const BASE_PATH = "/frutas-fresh-demo-cali";
 
 const ROUTES = {
   "/": "./pages/home.html",
@@ -13,7 +14,11 @@ async function loadRoute(path){
 }
 
 async function navigate(path){
-  history.pushState({}, "", path);
+  history.pushState(
+    {},
+    "",
+    BASE_PATH + path
+);
   await loadRoute(path);
 }
 
