@@ -1,4 +1,4 @@
-const BASE_PATH = "/frutas-fresh-demo-cali";
+const BASE_PATH = "/frutas-fresh-cali-demo";
 
 const ROUTES = {
   "/": "./pages/home.html",
